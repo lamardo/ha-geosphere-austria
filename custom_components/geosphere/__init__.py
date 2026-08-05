@@ -36,4 +36,11 @@ async def async_setup_entry(
     hass.data[DOMAIN][entry.entry_id] = coordinator
 
 
+    await hass.config_entries.async_forward_entry_setups(
+        entry,
+        [
+            "weather",
+        ],
+    )
+
     return True
