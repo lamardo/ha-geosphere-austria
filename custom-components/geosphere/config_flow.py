@@ -1,5 +1,6 @@
+import voluptuous as vol
+
 from homeassistant import config_entries
-from homeassistant.core import callback
 
 from .const import DOMAIN
 
@@ -25,7 +26,22 @@ class GeoSphereConfigFlow(
             )
 
 
+        schema = vol.Schema(
+            {
+                vol.Required(
+                    "latitude",
+                    default=48.23
+                ): float,
+
+                vol.Required(
+                    "longitude",
+                    default=13.57
+                ): float,
+            }
+        )
+
+
         return self.async_show_form(
             step_id="user",
-            data_schema={}
+            data_schema=schema
         )
