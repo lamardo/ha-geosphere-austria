@@ -1,0 +1,12 @@
+{
+  "domain": "geosphere",
+  "name": "GeoSphere Austria",
+  "version": "0.1.0",
+  "documentation": "https://github.com/lamardo/ha-geosphere-austria",
+  "requirements": [],
+  "codeowners": [
+    "@DEIN_USERNAME"
+  ],
+  "config_flow": true,
+  "iot_class": "cloud_polling"
+}
